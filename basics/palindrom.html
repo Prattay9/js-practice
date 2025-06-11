@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check for palindrom</h1>
+    <input type="number" id="Input" placeholder="Enter a number">
+    <button onclick="palcheck()">Check</button>
+    <p id="result"></p>
+    <script>
+        function palcheck(){
+            let input = document.getElementById("Input").value;
+            let reverse = input.split("").reverse().join("");
+            if(input===reverse){
+                document.getElementById("result").innerText="The number is palindrom"
+            }
+            else{
+                 document.getElementById("result").innerText="The number is not palindrom"
+
+            }
+        }
+    </script>
+</body>
+</html>

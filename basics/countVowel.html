@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Count the Characters :</h1>
+    <input
+      type="text"
+      id="textInput"
+      placeholder="Enter a string"
+      pattern="[A-Za-z\s]+"
+      title="Only letters and spaces allowed"
+    />
+    <button onclick="vCount()">Count</button>
+    <p id="result"></p>
+
+    <script>
+      function vCount() {
+        const input = document.getElementById("textInput").value.toLowerCase();
+        const inputArray = input.split("");
+
+        if (input === "") {
+          document.getElementById("result").innerText =
+            "❌ Input cannot be empty.";
+          return;
+        }
+
+        const isValid = /^[a-z\s]+$/.test(input);
+        if (!isValid) {
+          document.getElementById("result").innerText =
+            "❌ Please enter letters only (no numbers or symbols).";
+        }
+
+        const vowel = ["a", "e", "i", "o", "u"];
+        let count = 0;
+        for (let i = 0; i < inputArray.length; i++) {
+          if (vowel.includes(input[i])) {
+            count++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `The number of vowel is ${count}`;
+      }
+    </script>
+  </body>
+</html>

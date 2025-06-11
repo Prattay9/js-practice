@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Find the largest numebr</h1>
+    <input type="text" id="inputNum" placeholder="eg: 10, 20, 50, 80">
+    <button onclick="largeNum()">Find</button>
+    <p id="output"></p>
+
+    <script>
+        function largeNum(){
+            let input = document.getElementById("inputNum").value;
+            let parseArray = input.split(",").map(n=>parseFloat(n.trim()));
+            if(parseArray.length ===0|| parseArray.some(isNaN))
+                {
+                  document.getElementById("output").innerText=`Enter valid numbers`
+                  return;
+                }
+            // let maxnumber = parseArray[0]
+            // for(let i=0;i<parseArray.length;i++){
+            //     if(parseArray[i]>maxnumber){
+            //         maxnumber=parseArray[i];
+            //     }
+            // }
+            const maxnumber = Math.max(...parseArray)
+            document.getElementById('output').innerText=`The greatest number is ${maxnumber}`
+        }
+    </script>
+</body>
+</html>
