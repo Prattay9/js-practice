@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Product Of a Number : </h1>
+    <input type="text" id="input" placeholder="Enter a Number: eg 255">
+    <button onclick="productOf()"> Click</button>
+    <p id="result"></p>
+
+    <script>
+        function productOf(){
+            let input = document.getElementById("input").value;
+            let nums = input.split("").map(n=>parseInt(n))
+            // console.log(nums)
+
+             if (input === "" || isNaN(input)) {
+                document.getElementById("result").innerText = "Please enter a valid number.";
+                return;
+            }
+
+            let product=1
+            for(let i=0;i<nums.length;i++){
+                product = product*nums[i]
+            }
+            document.getElementById("result").innerText=`Factorial of th number is : ${product}`
+        }
+    </script>
+    
+</body>
+</html>

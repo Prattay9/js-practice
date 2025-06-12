@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sum of numbers in an Array</h1>
+    <input type="text" id="numInput" placeholder="Type Numbers : 10 ,20,30,40">
+    <button onclick="sumOfNums()">Sum</button>
+    <p id="result"></p>
+
+    <script>
+        function sumOfNums(){
+            let input = document.getElementById("numInput").value;
+            let parseloat = input.split(",").map(n=>parseFloat(n.trim()))
+            
+            let sum=0            
+            for(let i=0;i<parseloat.length;i++){
+                sum += parseloat[i]
+            }
+
+            document.getElementById("result").innerText=`Sum of the numbers is ${sum}`
+            
+        }
+    </script>
+</body>
+</html>
