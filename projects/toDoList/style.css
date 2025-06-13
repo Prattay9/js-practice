@@ -578,7 +578,10 @@ body {
     width: 100%;
     padding: 1rem;
   }
-
+  .empty-image{
+    min-width: 40%;
+    
+  }
   .stat-container {
     flex-direction: column;
     gap: 10px;
