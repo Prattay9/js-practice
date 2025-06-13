@@ -610,15 +610,28 @@ body {
     height: 60px;
     font-size: 1.2rem;
   }
-
+/* Keep list items in one line */
   #task-list li {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  #task-list li span {
+    font-size: 1rem;
+    word-break: break-word;
   }
 
   .task-buttons {
-    margin: 0;
+    margin-right: 0;
+    gap: 6px;
+  }
+
+  .task-buttons button {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
   }
 }
 
