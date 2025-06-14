@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Capitalize first letter of each word is a sentence. </h1>
+    <input type="text" id="sentence" placeholder="Enter a sentence here" />
+    <button onclick="capitalizeFirstLetter()">Capitalize</button>
+    <p id="result"></p>
+    <script>
+        function capitalizeFirstLetter() {
+            const input = document.getElementById("sentence").value;
+            const words = input.split(" ");
+            const capitalizedWords = words.map(word => {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            });
+            const result = capitalizedWords.join(" ");
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

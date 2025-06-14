@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Array Value Checker</title>
+</head>
+<body>
+  <h1>Check if the value is present in the array or not</h1>
+  <input type="text" id="listArr" placeholder="Enter array values: e.g. apple, banana, mango" />
+  <input type="text" id="value" placeholder="Value you want to check" />
+  <button onclick="checkValue()">Check</button>
+  <p id="output"></p>
+
+  <script>
+    function checkValue() {
+      const listInput = document.getElementById("listArr").value.trim();
+      const valueToCheck = document.getElementById("value").value.trim();
+      const output = document.getElementById("output");
+
+      if (!listInput) {
+        const msg = "The array is empty. Please enter some values.";
+        output.innerText = msg;
+        alert(msg);
+        return;
+      }
+
+      const arr = listInput.split(",").map(item => item.trim());
+
+      const isPresent = arr.includes(valueToCheck);
+
+      const message = isPresent
+        ? `The value "${valueToCheck}" is present in the array.`
+        : `The value "${valueToCheck}" is not present in the array.`;
+
+      output.innerText = message;
+      alert(message);
+    }
+  </script>
+</body>
+</html>
